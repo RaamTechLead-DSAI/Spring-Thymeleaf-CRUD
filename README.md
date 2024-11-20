@@ -16,7 +16,7 @@ This is a simple Spring Boot application implementing CRUD operations with a MyS
 - Maven: Build tool for the project.
 - MySQL: A running MySQL instance.
 
-Setting Up the Project
+# Setting Up the Project
 1. Clone the Repository
    - Clone this repository to your local machine:
      ```
@@ -24,9 +24,9 @@ Setting Up the Project
      cd Spring-Boot-API-CRUD-DB
 
 2. Set Up MySQL Database
-- Install MySQL and start the MySQL server.
-- Create a database for the application:
-`CREATE DATABASE subscription_management;`
+   - Install MySQL and start the MySQL server.
+   - Create a database for the application:
+   `CREATE DATABASE subscription_management;`
 
 3. Configure the application.properties file in src/main/resources/ with your MySQL connection details:
 Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
