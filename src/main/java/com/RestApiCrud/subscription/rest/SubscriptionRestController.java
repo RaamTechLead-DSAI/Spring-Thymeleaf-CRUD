@@ -30,7 +30,7 @@ public class SubscriptionRestController {
     public Subscription getSubscription(@PathVariable int subscriberId) {
         Subscription theSubscription = subscriptionService.findById(subscriberId);
 
-        if (theSubscription == null){
+        if (theSubscription == null) {
             throw new RuntimeException("Subscriber not found: " + subscriberId);
         }
 
@@ -39,7 +39,7 @@ public class SubscriptionRestController {
 
     // Add mapping for POST /subscriber - add new subscription
     @PostMapping("/subscribers")
-    public Subscription addSubscriber(@RequestBody Subscription theSubscription){
+    public Subscription addSubscriber(@RequestBody Subscription theSubscription) {
         // Just in case an ID is passed in JSON, set ID to 0
         // This is to force a save of new item... instead of update
 
@@ -49,6 +49,15 @@ public class SubscriptionRestController {
 
     }
 
-
-
+    // Add mapping for DELETE /subscribers/{subscriberId} - Delete Subscriber
+    @DeleteMapping("/subscribers/{subscriberId}")
+    public String deleteSubscriber(@PathVariable int subscriberId) {
+        Subscription tempSubscriber = subscriptionService.findById(subscriberId);
+        // Throw exception if null
+        if (tempSubscriber == null) {
+            throw new RuntimeException("Subscription ID is not found - " + subscriberId);
+        }
+        subscriptionService.deleteById(subscriberId);
+        return "Deleted Subscription Id: " + subscriberId;
+    }
 }
