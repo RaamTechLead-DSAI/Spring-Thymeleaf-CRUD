@@ -49,6 +49,11 @@ public class SubscriptionRestController {
 
     }
 
-
+    // Add mapping for PUT /subscribers - update existing subscriber
+    @PutMapping("/subscribers")
+    public Subscription updateSubscription(@RequestBody Subscription theSubscription){
+        Subscription dbSubscriber = subscriptionService.save(theSubscription);
+        return dbSubscriber;
+    }
 
 }
