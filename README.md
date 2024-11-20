@@ -29,21 +29,19 @@ cd Spring-Boot-API-CRUD-DB
 `CREATE DATABASE subscription_management;`
 
 3. Configure the application.properties file in src/main/resources/ with your MySQL connection details:
+Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/subscription_management
 spring.datasource.username=<your_username>
 spring.datasource.password=<your_password>
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
-
 4. Build and Run the Application
 Use Maven to build and run the application:
+The application will start on http://localhost:8080.
 ```
 mvn clean install
 mvn spring-boot:run
-
-The application will start on http://localhost:8080.
 
 # Testing the API with Postman
 1. Import Collection
@@ -60,31 +58,5 @@ You can import the provided Postman collection into Postman. This collection inc
    - URL: http://localhost:8080/api/subscribers
    - Method: POST
 
-# Spring Boot CRUD API with MySQL Database
-
-## Overview
-
-This repository contains a Spring Boot application implementing a CRUD (Create, Read, Update, Delete) API connected to a MySQL database. The application is designed to manage subscriber information, such as name, email, and subscription status.
-
-## Project Structure
-
-- **Controller**: Manages the API endpoints for subscription-related actions.
-- **Service**: Contains the business logic for managing subscriptions.
-- **DAO**: Provides data access methods for interacting with the database.
-- **Entity**: Defines the `Subscription` entity mapped to the database.
-
-## Prerequisites
-
-1. **Java 11 or higher**
-2. **Maven**
-3. **MySQL database**
-
-## Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
-cd Spring-Boot-API-CRUD-DB
 
 
