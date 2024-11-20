@@ -27,21 +27,20 @@ This is a simple Spring Boot application implementing CRUD operations with a MyS
    - Install MySQL and start the MySQL server.
    - Create a database for the application:
    `CREATE DATABASE subscription_management;`
-
-3. Configure the application.properties file in src/main/resources/ with your MySQL connection details:
-   - Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
+   - Configure the application.properties file in src/main/resources/ with your MySQL connection details:
       ```
       spring.datasource.url=jdbc:mysql://localhost:3306/subscription_management
       spring.datasource.username=<your_username>
       spring.datasource.password=<your_password>
       spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+   - Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
 
 4. Build and Run the Application
-Use Maven to build and run the application:
-The application will start on http://localhost:8080.
-```
-mvn clean install
-mvn spring-boot:run
+   - Use Maven to build and run the application:
+   - The application will start on http://localhost:8080.
+      ```
+      mvn clean install
+      mvn spring-boot:run
 
 # Testing the API with Postman
 1. Import Collection
