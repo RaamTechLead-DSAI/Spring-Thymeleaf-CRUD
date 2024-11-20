@@ -9,31 +9,49 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * DAO implementation for the Subscription entity using JPA (Java Persistence API).
+ * Provides methods to interact with the database to perform CRUD (Create, Read, Update, Delete) operations
+ * on Subscription records.
+ */
 @Repository
 public class SubscriptionDAOJpaImpl implements SubscriptionDAO{
-    // Define field for entitymanager
+    // EntityManager to interact with the JPA context and execute database operations
     private EntityManager entityManager;
 
-
-
-    // Set up constructor injection
+    /**
+     * Constructor for injecting the EntityManager dependency.
+     *
+     * @param theEntityManager the EntityManager to be used for database operations.
+     */
     @Autowired
     public SubscriptionDAOJpaImpl(EntityManager theEntityManager){
         entityManager = theEntityManager;
     }
 
+    /**
+     * Retrieves all subscriptions from the database.
+     *
+     * @return a list of Subscription entities.
+     */
     @Override
     public List<Subscription> findAll() {
-        // Create a Query
+        // Create a query to retrieve all Subscription records
         TypedQuery<Subscription> theQuery = entityManager.createQuery("from Subscription", Subscription.class);
 
-        // Execute query and get result list
+        // Execute the query and get the list of Subscription records
         List<Subscription> subscribers = theQuery.getResultList();
 
-        // Return the results
+        // Return the list of subscriptions
         return subscribers;
             }
 
+    /**
+     * Retrieves a subscription by its unique ID.
+     *
+     * @param theId the ID of the subscription to retrieve.
+     * @return the Subscription entity if found, otherwise null.
+     */
     @Override
     public Subscription findById(int theId) {
         // Get Subscription Details
@@ -43,24 +61,32 @@ public class SubscriptionDAOJpaImpl implements SubscriptionDAO{
         return theSubscription;
     }
 
+    /**
+     * Saves a new subscription or updates an existing subscription in the database.
+     *
+     * @param theSubscription the Subscription entity to save or update.
+     * @return the saved or updated Subscription entity.
+     */
     @Override
     public Subscription save(Subscription theSubscription) {
-        // Save Subscription
+        // Use merge to either save a new Subscription or update an existing one
         Subscription dbSubscription = entityManager.merge(theSubscription);
 
-        // Return the Subscription ID from Database
+        // Return the saved/updated Subscription entity with the database ID
         return dbSubscription;
     }
 
+    /**
+     * Deletes a subscription from the database by its ID.
+     *
+     * @param theId the ID of the subscription to delete.
+     */
     @Override
     public void deleteById(int theId) {
-        // Find Subscription Details
+        // Find the Subscription entity to delete
         Subscription theSubscription = entityManager.find(Subscription.class,theId);
 
-        // Remove Subscription from Database
+        // Remove the Subscription from the database
         entityManager.remove(theSubscription);
-
-
-
     }
 }
