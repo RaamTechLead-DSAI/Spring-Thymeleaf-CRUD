@@ -33,4 +33,34 @@ public class SubscriptionDAOJpaImpl implements SubscriptionDAO{
         // Return the results
         return subscribers;
             }
+
+    @Override
+    public Subscription findById(int theId) {
+        // Get Subscription Details
+        Subscription theSubscription = entityManager.find(Subscription.class,theId);
+
+        // Return Subscription Details
+        return theSubscription;
+    }
+
+    @Override
+    public Subscription save(Subscription theSubscription) {
+        // Save Subscription
+        Subscription dbSubscription = entityManager.merge(theSubscription);
+
+        // Return the Subscription ID from Database
+        return dbSubscription;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        // Find Subscription Details
+        Subscription theSubscription = entityManager.find(Subscription.class,theId);
+
+        // Remove Subscription from Database
+        entityManager.remove(theSubscription);
+
+
+
+    }
 }
