@@ -60,3 +60,31 @@ You can import the provided Postman collection into Postman. This collection inc
    - URL: http://localhost:8080/api/subscribers
    - Method: POST
 
+# Spring Boot CRUD API with MySQL Database
+
+## Overview
+
+This repository contains a Spring Boot application implementing a CRUD (Create, Read, Update, Delete) API connected to a MySQL database. The application is designed to manage subscriber information, such as name, email, and subscription status.
+
+## Project Structure
+
+- **Controller**: Manages the API endpoints for subscription-related actions.
+- **Service**: Contains the business logic for managing subscriptions.
+- **DAO**: Provides data access methods for interacting with the database.
+- **Entity**: Defines the `Subscription` entity mapped to the database.
+
+## Prerequisites
+
+1. **Java 11 or higher**
+2. **Maven**
+3. **MySQL database**
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
+cd Spring-Boot-API-CRUD-DB
+
+
