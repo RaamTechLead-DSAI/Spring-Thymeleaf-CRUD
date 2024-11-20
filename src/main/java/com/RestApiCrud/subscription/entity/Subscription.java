@@ -4,32 +4,72 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+/**
+ * Entity class representing the subscription details.
+ * This class maps to the "subscription" table in the database
+ * and defines its fields, constructors, and accessors.
+ */
 @Entity
 @Table(name="subscription")
 public class Subscription {
     // Define Fields
+    /**
+     * Primary key for the subscription table.
+     * Auto-generated using the IDENTITY strategy.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="subscriber_id")
     private int subscriberId;
+    /**
+     * Subscription status (e.g., ACTIVE, INACTIVE).
+     */
     @Column(name="status")
     private String status;
+    /**
+     * First name of the subscriber.
+     */
     @Column(name="first_name")
     private String firstName;
+    /**
+     * Last name of the subscriber.
+     */
     @Column(name="last_name")
     private String lastName;
+    /**
+     * Email address of the subscriber.
+     */
     @Column(name="email")
     private String email;
+    /**
+     * Contact number of the subscriber.
+     */
     @Column(name="contact_num")
     private String contactNum;
+    /**
+     * The start date of the subscription.
+     */
     @Column(name="start_date")
     private Date startDate;
 
     // Define constructors
-    // Define No Argument Constructor required by JPA
+    /**
+     * Default no-argument constructor required by JPA.
+     */
     public Subscription(){
 
     }
+
+    /**
+     * Constructor to initialize the Subscription object with all fields except the subscriber ID.
+     *
+     * @param status      the subscription status
+     * @param firstName   the subscriber's first name
+     * @param lastName    the subscriber's last name
+     * @param email       the subscriber's email
+     * @param contactNum  the subscriber's contact number
+     * @param startDate   the subscription start date
+     */
     public Subscription(String status, String firstName, String lastName, String email, String contactNum, Date startDate) {
         this.status = status;
         this.firstName = firstName;
@@ -97,6 +137,12 @@ public class Subscription {
     }
 
     // Define toString
+    /**
+     * Provides a string representation of the Subscription object,
+     * including all its fields.
+     *
+     * @return a string representation of the Subscription
+     */
     @Override
     public String toString() {
         return "Subscription{" +
