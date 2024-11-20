@@ -35,12 +35,15 @@ This is a simple Spring Boot application implementing CRUD operations with a MyS
       spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
    - Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
 
-4. Build and Run the Application
+3. Build and Run the Application
    - Use Maven to build and run the application:
    - The application will start on http://localhost:8080.
       ```
       mvn clean install
       mvn spring-boot:run
+
+# API Endpoints
+
 
 # Testing the API with Postman
 1. Import Collection
