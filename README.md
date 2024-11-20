@@ -1,4 +1,4 @@
-# Spring Boot API CRUD with Database
+# Subscription Management Implementation Spring Boot API CRUD with Database
 This is a simple Spring Boot application implementing CRUD operations with a MySQL database. It provides an API to manage subscription data, such as adding, updating, retrieving, and deleting subscriber details.
 
 # Features
@@ -65,6 +65,17 @@ You can import the provided Postman collection into Postman. This collection inc
 - POST Create Subscriber:
    - URL: http://localhost:8080/api/subscribers
    - Method: POST
+     ```json
+     {
+       "subscriberId": 1,
+       "status": "Inactive",
+       "firstName": "John",
+       "lastName": "Doe",
+       "email": "john.doe@example.com",
+       "contactNum": "1234567890",
+       "startDate": "2024-11-20"
+      }
+
 
 
 
