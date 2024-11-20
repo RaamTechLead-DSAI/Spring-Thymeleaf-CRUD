@@ -8,24 +8,56 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST Controller for managing Subscription entities.
+ * Provides endpoints for performing CRUD operations on subscriptions.
+ *
+ * Endpoints:
+ * - GET    /api/subscribers        : Retrieve all subscriptions
+ * - GET    /api/subscribers/{id}   : Retrieve a specific subscription by ID
+ * - POST   /api/subscribers        : Create a new subscription
+ * - PUT    /api/subscribers        : Update an existing subscription
+ * - DELETE /api/subscribers/{id}   : Delete a subscription by ID
+ *
+ * This controller delegates all business logic to the SubscriptionService.
+ */
+
 @RestController
 @RequestMapping("/api")
 public class SubscriptionRestController {
 
     private SubscriptionService subscriptionService;
 
-    // Need to refactor - temp solution: Inject Employee DAO (Use Constructor Injection)
+    /**
+     * Constructor-based dependency injection for SubscriptionService.
+     * Constructor injection is preferred for mandatory dependencies, ensuring immutability
+     * and better testability.
+     *
+     * @param theSubscriptionService the service layer for subscription operations
+     */
     @Autowired
     public SubscriptionRestController(SubscriptionService theSubscriptionService) {
         subscriptionService = theSubscriptionService;
     }
 
+    /**
+     * Retrieves a list of all subscriptions.
+     *
+     * @return List of Subscription entities
+     */
     @GetMapping("/subscribers")
     public List<Subscription> findAll() {
         return subscriptionService.findAll();
     }
 
-    // Add mapping for GET /subscribers/{subscriberId}
+    /**
+     * Retrieves a specific subscription by its ID.
+     * If the subscription is not found, an exception is thrown.
+     *
+     * @param subscriberId the unique ID of the subscription
+     * @return the Subscription entity with the specified ID
+     * @throws RuntimeException if the subscription is not found
+     */
     @GetMapping("/subscribers/{subscriberId}")
     public Subscription getSubscription(@PathVariable int subscriberId) {
         Subscription theSubscription = subscriptionService.findById(subscriberId);
@@ -37,7 +69,13 @@ public class SubscriptionRestController {
         return theSubscription;
     }
 
-    // Add mapping for POST /subscriber - add new subscription
+    /**
+     * Adds a new subscription.
+     * If an ID is provided in the request body, it is ignored to ensure a new subscription is created.
+     *
+     * @param theSubscription the subscription entity to be added
+     * @return the saved Subscription entity
+     */
     @PostMapping("/subscribers")
     public Subscription addSubscriber(@RequestBody Subscription theSubscription) {
         // Just in case an ID is passed in JSON, set ID to 0
@@ -49,14 +87,27 @@ public class SubscriptionRestController {
 
     }
 
-    // Add mapping for PUT /subscribers - update existing subscriber
+    /**
+     * Updates an existing subscription.
+     * The subscription entity must include a valid ID to be updated.
+     *
+     * @param theSubscription the subscription entity with updated details
+     * @return the updated Subscription entity
+     */
     @PutMapping("/subscribers")
     public Subscription updateSubscription(@RequestBody Subscription theSubscription){
         Subscription dbSubscriber = subscriptionService.save(theSubscription);
         return dbSubscriber;
     }
 
-    // Add mapping for DELETE /subscribers/{subscriberId} - Delete Subscriber
+    /**
+     * Deletes a subscription by its ID.
+     * If the subscription is not found, an exception is thrown.
+     *
+     * @param subscriberId the unique ID of the subscription to be deleted
+     * @return a confirmation message
+     * @throws RuntimeException if the subscription ID is not found
+     */
     @DeleteMapping("/subscribers/{subscriberId}")
     public String deleteSubscriber(@PathVariable int subscriberId) {
         Subscription tempSubscriber = subscriptionService.findById(subscriberId);
