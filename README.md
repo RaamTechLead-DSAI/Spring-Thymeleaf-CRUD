@@ -19,9 +19,9 @@ This is a simple Spring Boot application implementing CRUD operations with a MyS
 Setting Up the Project
 1. Clone the Repository
    - Clone this repository to your local machine:
-```
-git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
-cd Spring-Boot-API-CRUD-DB
+     ```
+     git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
+     cd Spring-Boot-API-CRUD-DB
 
 2. Set Up MySQL Database
 - Install MySQL and start the MySQL server.
