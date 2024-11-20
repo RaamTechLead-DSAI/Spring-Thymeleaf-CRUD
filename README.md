@@ -23,3 +23,40 @@ Setting Up the Project
 git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
 cd Spring-Boot-API-CRUD-DB
 
+2. Set Up MySQL Database
+- Install MySQL and start the MySQL server.
+- Create a database for the application:
+`CREATE DATABASE subscription_management;`
+
+3. Configure the application.properties file in src/main/resources/ with your MySQL connection details:
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/subscription_management
+spring.datasource.username=<your_username>
+spring.datasource.password=<your_password>
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
+
+4. Build and Run the Application
+Use Maven to build and run the application:
+```
+mvn clean install
+mvn spring-boot:run
+
+The application will start on http://localhost:8080.
+
+# Testing the API with Postman
+1. Import Collection
+You can import the provided Postman collection into Postman. This collection includes all the API requests that correspond to the CRUD operations.
+
+2. Example Requests
+- GET All Subscribers:
+   - URL: http://localhost:8080/api/subscribers
+   - Method: GET
+- GET Subscriber by ID:
+   - URL: http://localhost:8080/api/subscribers/{id}
+   - Method: GET
+- POST Create Subscriber:
+   - URL: http://localhost:8080/api/subscribers
+   - Method: POST
+
