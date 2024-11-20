@@ -62,10 +62,24 @@ You can import the provided Postman collection into Postman. This collection inc
 - GET Subscriber by ID:
    - URL: http://localhost:8080/api/subscribers/{id}
    - Method: GET
+   - Body (JSON)
 - POST Create Subscriber:
    - URL: http://localhost:8080/api/subscribers
    - Method: POST
      ```json
+      {
+       "status": "Active",
+       "firstName": "John",
+       "lastName": "Doe",
+       "email": "john.doe@example.com",
+       "contactNum": "1234567890",
+       "startDate": "2024-11-20"
+      }
+- PUT Update Subscriber:
+   - URL: http://localhost:8080/api/subscribers
+   - Method: PUT
+   - Body (JSON)
+     ```json 
      {
        "subscriberId": 1,
        "status": "Inactive",
@@ -76,6 +90,12 @@ You can import the provided Postman collection into Postman. This collection inc
        "startDate": "2024-11-20"
       }
 
+- DELETE Subscriber:
+  - URL: http://localhost:8080/api/subscribers/{id}
+  - Method: DELETE
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
