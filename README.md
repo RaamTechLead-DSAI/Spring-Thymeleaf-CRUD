@@ -1,3 +1,6 @@
+# Spring-Boot-API-CRUD-DB
+A Subscription Management application implemented using Spring Boot API and MySQL database.
+
 # Subscription Management Implementation Spring Boot API CRUD with Database
 This is a simple Spring Boot application implementing CRUD operations with a MySQL database. It provides an API to manage subscription data, such as adding, updating, retrieving, and deleting subscriber details.
 
