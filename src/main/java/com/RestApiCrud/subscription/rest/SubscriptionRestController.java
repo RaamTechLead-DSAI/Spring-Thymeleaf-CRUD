@@ -4,10 +4,7 @@ import com.RestApiCrud.subscription.dao.SubscriptionDAO;
 import com.RestApiCrud.subscription.entity.Subscription;
 import com.RestApiCrud.subscription.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,4 +36,19 @@ public class SubscriptionRestController {
 
         return theSubscription;
     }
+
+    // Add mapping for POST /subscriber - add new subscription
+    @PostMapping("/subscribers")
+    public Subscription addSubscriber(@RequestBody Subscription theSubscription){
+        // Just in case an ID is passed in JSON, set ID to 0
+        // This is to force a save of new item... instead of update
+
+        theSubscription.setSubscriberId(0);
+        Subscription dbSubscription = subscriptionService.save(theSubscription);
+        return dbSubscription;
+
+    }
+
+
+
 }
