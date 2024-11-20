@@ -43,7 +43,13 @@ This is a simple Spring Boot application implementing CRUD operations with a MyS
       mvn spring-boot:run
 
 # API Endpoints
-
+| Method | Endpoint | Description |
+|----------|----------|----------|
+| GET | /api/subscribers | Get all subscribers |
+| GET | /api/subscribers/{id} | Get a subscriber by ID |
+| POST | /api/subscribers | Add a new subscriber |
+| PUT | /api/subscribers | Update an existing subscriber |
+| DELETE | /api/subscribers/{id} | Delete a subscriber by ID |
 
 # Testing the API with Postman
 1. Import Collection
