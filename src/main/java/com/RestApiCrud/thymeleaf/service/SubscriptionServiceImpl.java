@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Implementation of the SubscriptionService interface.
@@ -37,7 +38,7 @@ public class SubscriptionServiceImpl implements SubscriptionService{
      */
     @Override
     public List<Subscription> findAll() {
-        return subscriptionDAO.findAll();
+        return subscriptionDAO.findAllByOrderByLastNameAsc();
     }
 
     /**
@@ -48,7 +49,15 @@ public class SubscriptionServiceImpl implements SubscriptionService{
      */
     @Override
     public Subscription findById(int theId) {
-        return subscriptionDAO.findById(theId);
+
+        Optional<Subscription> result = subscriptionDAO.findById(theId);
+
+        if (result.isPresent()) {
+            return result.get();  // Return the found subscription
+        } else {
+            // Subscriber not found
+            throw new RuntimeException("Unable to find subscriber ID - " + theId);
+        }
     }
 
     /**

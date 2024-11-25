@@ -1,6 +1,7 @@
 package com.RestApiCrud.thymeleaf.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -49,6 +50,7 @@ public class Subscription {
     /**
      * The start date of the subscription.
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name="start_date")
     private Date startDate;
 

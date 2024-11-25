@@ -1,6 +1,7 @@
 package com.RestApiCrud.thymeleaf.dao;
 
 import com.RestApiCrud.thymeleaf.entity.Subscription;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -9,35 +10,14 @@ import java.util.List;
  * Provides methods for common CRUD (Create, Read, Update, Delete) operations
  * on the Subscription table in the database.
  */
-public interface SubscriptionDAO {
 
-    /**
-     * Retrieves all subscriptions from the database.
-     *
-     * @return a list of all Subscription entities.
-     */
-    List<Subscription> findAll();
 
-    /**
-     * Retrieves a specific subscription by its ID.
-     *
-     * @param theId the unique ID of the subscription.
-     * @return the Subscription entity if found; otherwise, null.
-     */
-    Subscription findById(int theId);
 
-    /**
-     * Saves a new subscription or updates an existing subscription in the database.
-     *
-     * @param theSubscription the Subscription entity to save or update.
-     * @return the saved or updated Subscription entity.
-     */
-    Subscription save(Subscription theSubscription);
+public interface SubscriptionDAO extends JpaRepository<Subscription, Integer> {
 
-    /**
-     * Deletes a subscription from the database by its ID.
-     *
-     * @param theId the unique ID of the subscription to delete.
-     */
-    void deleteById(int theId);
+    // JPA handles everything in the background and no JPA implementation required
+
+    // Add a method to sort by Last Name
+    public  List<Subscription> findAllByOrderByLastNameAsc();
+
 }
