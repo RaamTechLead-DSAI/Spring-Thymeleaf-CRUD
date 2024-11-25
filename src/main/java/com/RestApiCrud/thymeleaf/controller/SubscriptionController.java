@@ -66,6 +66,13 @@ public class SubscriptionController {
 
         // Use a redirect to prevent duplicate submissions
         return "redirect:/subscribers/list";
+    }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("subscriberId") int theId) {
+        // Delete the Subscriber
+        subscriptionService.deleteById(theId);
+        // Redirect to subscribers list
+        return "redirect:/subscribers/list";
     }
 }
