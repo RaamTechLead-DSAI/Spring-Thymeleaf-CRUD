@@ -1,4 +1,4 @@
-package com.RestApiCrud.subscription.entity;
+package com.RestApiCrud.thymeleaf.entity;
 
 import jakarta.persistence.*;
 

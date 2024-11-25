@@ -1,4 +1,4 @@
-package com.RestApiCrud.subscription;
+package com.RestApiCrud.thymeleaf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The @SpringBootApplication annotation indicates this is a Spring Boot application.
  */
 @SpringBootApplication
-public class SubscriptionApplication {
+public class SubscribersMvcThymeleaf {
 
 	/**
 	 * The main method to launch the Spring Boot application.
@@ -17,7 +17,7 @@ public class SubscriptionApplication {
 	 * @param args command-line arguments (unused in this application).
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(SubscriptionApplication.class, args);
+		SpringApplication.run(SubscribersMvcThymeleaf.class, args);
 	}
 
 }

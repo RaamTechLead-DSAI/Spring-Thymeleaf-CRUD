@@ -1,6 +1,6 @@
-package com.RestApiCrud.subscription.service;
+package com.RestApiCrud.thymeleaf.service;
 
-import com.RestApiCrud.subscription.entity.Subscription;
+import com.RestApiCrud.thymeleaf.entity.Subscription;
 
 import java.util.List;
 

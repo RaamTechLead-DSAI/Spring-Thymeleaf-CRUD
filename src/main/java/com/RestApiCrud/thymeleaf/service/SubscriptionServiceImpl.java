@@ -1,8 +1,7 @@
-package com.RestApiCrud.subscription.service;
+package com.RestApiCrud.thymeleaf.service;
 
-import com.RestApiCrud.subscription.dao.SubscriptionDAO;
-import com.RestApiCrud.subscription.entity.Subscription;
-import jakarta.persistence.Table;
+import com.RestApiCrud.thymeleaf.dao.SubscriptionDAO;
+import com.RestApiCrud.thymeleaf.entity.Subscription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
