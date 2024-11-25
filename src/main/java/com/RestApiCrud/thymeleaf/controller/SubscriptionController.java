@@ -5,10 +5,7 @@ import com.RestApiCrud.thymeleaf.service.SubscriptionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.Flow;
@@ -40,6 +37,18 @@ public class SubscriptionController {
         // Create model attribute to bind form data
         Subscription theSubscription = new Subscription();
         theModel.addAttribute("subscription", theSubscription);
+        return "subscribers/subscriber-form";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("subscriberId") int theId, Model theModel) {
+        // Get the subscriber from the service
+        Subscription theSubscription = subscriptionService.findById(theId);
+
+        // Set subscriber in the model to pre-populate the form
+        theModel.addAttribute("subscription", theSubscription);
+
+        // Send over to form
         return "subscribers/subscriber-form";
     }
 

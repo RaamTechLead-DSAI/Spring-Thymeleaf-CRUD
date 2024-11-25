@@ -20,6 +20,9 @@
     <form action="#" th:action="@{/subscribers/save}"
           th:object="${subscription}" method="POST">
 
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{subscriberId}" />
+
         <input type="text" th:field="*{status}"
                class="form-control mb-4 w-25" placeholder="Status">
 
