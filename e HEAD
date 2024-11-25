@@ -1,0 +1,34 @@
+[33m1ba90b9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Update README.md
+[33mb84a786[m Update README.md
+[33m22e4c75[m Update README.md
+[33ma94b386[m Update README.md
+[33m4faff2a[m Update README.md
+[33m3810802[m Update README.md
+[33m37f3283[m Update README.md
+[33m9f74d7f[m Update README.md
+[33m1527229[m Update README.md
+[33m2649cc1[m Update README.md
+[33m6dd5ab7[m Update README.md
+[33mb8a28d0[m Update README.md
+[33mbd8208e[m Update README.md
+[33m7e1f475[m Create README.md
+[33md217184[m Added commentst to main program
+[33m61d8d26[m Added comments to SubscriptionDAoJpaImpl.java
+[33m2e954a0[m Added comments for SubscriptionDAO.java
+[33mdb46138[m Added comments to application.properties
+[33me9e8ed8[m Added comments for Subscription.java
+[33mf1b0598[m Added comments for SubscriptionServiceImpl.java
+[33mdaf3839[m Added comments to the file SubscriptionService.java
+[33m24b84f0[m Added comments to SubscriptionRestController.java
+[33mc8315e1[m Resolved typo issues caused while adding comments
+[33m16c2366[m main and dev branch conflict
+[33mbc3bb97[m Added comments to SubscriptionRestController.java
+[33mdfb7346[m Resolved merge conflict in SubscriptionRestController.java
+[33m2a1c648[m Saving DELETE implementation
+[33m7fdf851[m Saving PUT implementation
+[33m2aa3595[m Saving POSt implementation
+[33m1944112[m Saving work get subscribers by unique id
+[33m48f07db[m Saving Subscription @Service Implementation
+[33m9ac0222[m Saving work ...
+[33mbf588e6[m Saving work ...
+[33m8a9816a[m First Commit
