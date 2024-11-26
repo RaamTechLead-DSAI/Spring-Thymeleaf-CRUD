@@ -9,15 +9,19 @@ import java.util.List;
  * DAO (Data Access Object) interface for managing Subscription entities.
  * Provides methods for common CRUD (Create, Read, Update, Delete) operations
  * on the Subscription table in the database.
+ *
+ * Extends the JpaRepository interface to leverage Spring Data JPA's built-in functionalities,
+ * reducing the need for boilerplate code and simplifying database interactions.
  */
-
-
-
 public interface SubscriptionDAO extends JpaRepository<Subscription, Integer> {
 
-    // JPA handles everything in the background and no JPA implementation required
+    // JPA handles CRUD implementations implicitly; no custom implementation is required here.
+    // Method names follow Spring Data JPA conventions for query generation.
 
-    // Add a method to sort by Last Name
-    public  List<Subscription> findAllByOrderByLastNameAsc();
-
+    /**
+     * Retrieves all Subscription entities from the database, sorted in ascending order by the last name.
+     *
+     * @return A list of Subscription entities sorted by last name in ascending order.
+     */
+    List<Subscription> findAllByOrderByLastNameAsc();
 }
