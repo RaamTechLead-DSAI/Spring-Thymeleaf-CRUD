@@ -1,104 +1,58 @@
-# Spring-Boot-API-CRUD-DB
-A Subscription Management application implemented using Spring Boot API and MySQL database.
+# Spring Thymeleaf CRUD Application
 
-# Subscription Management Implementation Spring Boot API CRUD with Database
-This is a simple Spring Boot application implementing CRUD operations with a MySQL database. It provides an API to manage subscription data, such as adding, updating, retrieving, and deleting subscriber details.
+This repository contains a basic CRUD (Create, Read, Update, Delete) application built using **Spring Boot** and **Thymeleaf**. The project demonstrates a simple web application that manages entities with a complete front-end interface for data manipulation.
 
-# Features
-- CRUD operations: Create, Read, Update, Delete subscription records.
-- RESTful API: Exposes endpoints to interact with the subscription database.
-- MySQL Database Integration: Uses MySQL to store subscriber information.
+## Features
+- **Spring Boot**: Simplifies application setup and development.
+- **Thymeleaf**: Server-side templating for rendering dynamic HTML views.
+- **CRUD Operations**: Perform Create, Read, Update, and Delete operations on entities.
+- **MVC Architecture**: Demonstrates the use of Model-View-Controller design.
+- **MySQL Database Integration**: Connects to a MySQL database for data persistence.
 
-# Technologies Used
-- Spring Boot: Backend framework for building Java applications.
-- MySQL: Relational database for storing subscription data.
-- Postman: For testing the REST API.
+## Prerequisites
+- **Java 17** or higher
+- **Maven 3.6+**
+- **MySQL Database**
+- **IntelliJ IDEA** (recommended IDE)
 
-# Prerequisites
-- Java: JDK 11 or higher.
-- Maven: Build tool for the project.
-- MySQL: A running MySQL instance.
+## Project Setup
 
-# Setting Up the Project
-1. Clone the Repository
-   - Clone this repository to your local machine:
-     ```
-     git clone https://github.com/RaamTechLead-DSAI/Spring-Boot-API-CRUD-DB.git
-     cd Spring-Boot-API-CRUD-DB
+### 1. Clone the Repository
+```bash
+git clone https://github.com/RaamTechLead-DSAI/Spring-Thymeleaf-CRUD.git
+cd Spring-Thymeleaf-CRUD
 
-2. Set Up MySQL Database
-   - Install MySQL and start the MySQL server.
-   - Create a database for the application:
-   `CREATE DATABASE subscription_management;`
-   - Configure the application.properties file in src/main/resources/ with your MySQL connection details:
-      ```
-      spring.datasource.url=jdbc:mysql://localhost:3306/subscription_management
-      spring.datasource.username=<your_username>
-      spring.datasource.password=<your_password>
-      spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-   - Make sure to replace <your_username> and <your_password> with your actual MySQL credentials.
 
-3. Build and Run the Application
-   - Use Maven to build and run the application:
-   - The application will start on http://localhost:8080.
-      ```
-      mvn clean install
-      mvn spring-boot:run
+---
 
-# API Endpoints
-| Method | Endpoint | Description |
-|----------|----------|----------|
-| GET | /api/subscribers | Get all subscribers |
-| GET | /api/subscribers/{id} | Get a subscriber by ID |
-| POST | /api/subscribers | Add a new subscriber |
-| PUT | /api/subscribers | Update an existing subscriber |
-| DELETE | /api/subscribers/{id} | Delete a subscriber by ID |
+### 2. Configure MySQL Database
+spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
 
-# Testing the API with Postman
-1. Import Collection
-You can import the provided Postman collection into Postman. This collection includes all the API requests that correspond to the CRUD operations.
+### 3. Build and Run the Application
+mvn clean install
+mvn spring-boot:run
 
-2. Example Requests
-- GET All Subscribers:
-   - URL: http://localhost:8080/api/subscribers
-   - Method: GET
-- GET Subscriber by ID:
-   - URL: http://localhost:8080/api/subscribers/{id}
-   - Method: GET
-   - Body (JSON)
-- POST Create Subscriber:
-   - URL: http://localhost:8080/api/subscribers
-   - Method: POST
-     ```json
-      {
-       "status": "Active",
-       "firstName": "John",
-       "lastName": "Doe",
-       "email": "john.doe@example.com",
-       "contactNum": "1234567890",
-       "startDate": "2024-11-20"
-      }
-- PUT Update Subscriber:
-   - URL: http://localhost:8080/api/subscribers
-   - Method: PUT
-   - Body (JSON)
-     ```json 
-     {
-       "subscriberId": 1,
-       "status": "Inactive",
-       "firstName": "John",
-       "lastName": "Doe",
-       "email": "john.doe@example.com",
-       "contactNum": "1234567890",
-       "startDate": "2024-11-20"
-      }
+### 4. Access the Application
+http://localhost:8080/
 
-- DELETE Subscriber:
-  - URL: http://localhost:8080/api/subscribers/{id}
-  - Method: DELETE
+#CRUD Operations Overview
+Create: Add a new entity using the form on the homepage.
+Read: View the list of all entities.
+Update: Edit an existing entity using the edit option.
+Delete: Remove an entity from the list.
+
+src
+├── main
+│   ├── java
+│   │   └── com.example.demo    # Java source files
+│   ├── resources
+│   │   ├── static              # CSS, JS, images
+│   │   ├── templates           # Thymeleaf HTML templates
+│   │   └── application.properties
+└── test                        # Unit and integration tests
 
 # License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-
+This project is licensed under the MIT License. See the LICENSE file for details
