@@ -44,7 +44,16 @@ http://localhost:8080/
 - Update: Edit an existing entity using the edit option.
 - Delete: Remove an entity from the list.
 
-src ├── main │ ├── java │ │ └── com.example.demo # Java source files │ ├── resources │ │ ├── static # CSS, JS, images │ │ ├── templates # Thymeleaf HTML templates │ │ └── application.properties └── test # Unit and integration tests
+```
+├── main
+│   ├── java
+│   │   └── com.example.demo    # Java source files
+│   ├── resources
+│   │   ├── static              # CSS, JS, images
+│   │   ├── templates           # Thymeleaf HTML templates
+│   │   └── application.properties
+└── test                        # Unit and integration tests
+```
 
 # License
 - This project is licensed under the MIT License. See the LICENSE file for details
