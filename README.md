@@ -23,10 +23,10 @@ git clone https://github.com/RaamTechLead-DSAI/Spring-Thymeleaf-CRUD.git
 cd Spring-Thymeleaf-CRUD
 ```
 ### 2. Configure MySQL Database
-spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
+- spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+- spring.datasource.username=your_username
+- spring.datasource.password=your_password
+- spring.jpa.hibernate.ddl-auto=update
 
 ### 3. Build and Run the Application
 mvn clean install
