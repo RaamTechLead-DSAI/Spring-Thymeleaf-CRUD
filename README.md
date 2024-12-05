@@ -22,10 +22,6 @@ This repository contains a basic CRUD (Create, Read, Update, Delete) application
 git clone https://github.com/RaamTechLead-DSAI/Spring-Thymeleaf-CRUD.git
 cd Spring-Thymeleaf-CRUD
 ```
-
-
----
-
 ### 2. Configure MySQL Database
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
 spring.datasource.username=your_username
