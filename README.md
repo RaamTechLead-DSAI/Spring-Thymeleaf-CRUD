@@ -29,9 +29,10 @@ cd Spring-Thymeleaf-CRUD
 - spring.jpa.hibernate.ddl-auto=update
 
 ### 3. Build and Run the Application
+```bash
 mvn clean install
 mvn spring-boot:run
-
+```
 ### 4. Access the Application
 http://localhost:8080/
 
