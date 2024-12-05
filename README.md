@@ -34,13 +34,15 @@ mvn clean install
 mvn spring-boot:run
 ```
 ### 4. Access the Application
+```bash
 http://localhost:8080/
+```
 
 #CRUD Operations Overview
-Create: Add a new entity using the form on the homepage.
-Read: View the list of all entities.
-Update: Edit an existing entity using the edit option.
-Delete: Remove an entity from the list.
+- Create: Add a new entity using the form on the homepage.
+- Read: View the list of all entities.
+- Update: Edit an existing entity using the edit option.
+- Delete: Remove an entity from the list.
 
 src
 ├── main
@@ -53,4 +55,4 @@ src
 └── test                        # Unit and integration tests
 
 # License
-This project is licensed under the MIT License. See the LICENSE file for details
+- This project is licensed under the MIT License. See the LICENSE file for details
