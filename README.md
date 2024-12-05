@@ -21,6 +21,7 @@ This repository contains a basic CRUD (Create, Read, Update, Delete) application
 ```bash
 git clone https://github.com/RaamTechLead-DSAI/Spring-Thymeleaf-CRUD.git
 cd Spring-Thymeleaf-CRUD
+```
 
 
 ---
