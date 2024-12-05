@@ -38,21 +38,15 @@ mvn spring-boot:run
 http://localhost:8080/
 ```
 
-#CRUD Operations Overview
+## CRUD Operations Overview
 - Create: Add a new entity using the form on the homepage.
 - Read: View the list of all entities.
 - Update: Edit an existing entity using the edit option.
 - Delete: Remove an entity from the list.
 
-src
-├── main
-│   ├── java
-│   │   └── com.example.demo    # Java source files
-│   ├── resources
-│   │   ├── static              # CSS, JS, images
-│   │   ├── templates           # Thymeleaf HTML templates
-│   │   └── application.properties
-└── test                        # Unit and integration tests
+```
+src ├── main │ ├── java │ │ └── com.example.demo # Java source files │ ├── resources │ │ ├── static # CSS, JS, images │ │ ├── templates # Thymeleaf HTML templates │ │ └── application.properties └── test # Unit and integration tests
+```
 
 # License
 - This project is licensed under the MIT License. See the LICENSE file for details
