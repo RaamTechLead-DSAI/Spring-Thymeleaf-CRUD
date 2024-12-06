@@ -21,30 +21,30 @@ This repository contains a basic CRUD (Create, Read, Update, Delete) application
 ```bash
 git clone https://github.com/RaamTechLead-DSAI/Spring-Thymeleaf-CRUD.git
 cd Spring-Thymeleaf-CRUD
-
-
----
-
+```
 ### 2. Configure MySQL Database
-spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
+- spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+- spring.datasource.username=your_username
+- spring.datasource.password=your_password
+- spring.jpa.hibernate.ddl-auto=update
 
 ### 3. Build and Run the Application
+```bash
 mvn clean install
 mvn spring-boot:run
-
+```
 ### 4. Access the Application
+```bash
 http://localhost:8080/
+```
 
-#CRUD Operations Overview
-Create: Add a new entity using the form on the homepage.
-Read: View the list of all entities.
-Update: Edit an existing entity using the edit option.
-Delete: Remove an entity from the list.
+## CRUD Operations Overview
+- Create: Add a new entity using the form on the homepage.
+- Read: View the list of all entities.
+- Update: Edit an existing entity using the edit option.
+- Delete: Remove an entity from the list.
 
-src
+```
 ├── main
 │   ├── java
 │   │   └── com.example.demo    # Java source files
@@ -53,9 +53,7 @@ src
 │   │   ├── templates           # Thymeleaf HTML templates
 │   │   └── application.properties
 └── test                        # Unit and integration tests
+```
 
 # License
-This project is licensed under the MIT License. See the LICENSE file for details
-
-
-
+- This project is licensed under the MIT License. See the LICENSE file for details
