@@ -1,11 +1,14 @@
 package com.RestApiCrud.thymeleaf.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 @Aspect
@@ -30,6 +33,7 @@ public class LoggingAspect {
     @Pointcut("forControllerPackage() || forServicePackage() || forDaoPackage()")
     private void forAppFlow() {}
 
+    // Implement Before Advice
     @Before("forAppFlow()")
     public void before(JoinPoint theJoinPoint) {
 
@@ -38,11 +42,21 @@ public class LoggingAspect {
         myLogger.info("====> in @Before: calling method: " + theMethod);
 
         // Display the arguments to the method
-
-
-
+        Object[] args = theJoinPoint.getArgs();
+        for (Object tempArg : args) {
+            myLogger.info("====> argument: " + tempArg);
+        }
     }
 
-
-
+    // Implement After Advice
+    @AfterReturning(
+            pointcut = "forAppFlow()",
+            returning = "theResult")
+    public void afterReturning(JoinPoint theJoinPoint, Object theResult){
+        //Display the method returning
+        String theMethod = theJoinPoint.getSignature().toShortString();
+        myLogger.info("====> in @AfterReturning: from method: " + theMethod);
+        // Display the data returned
+        myLogger.info("====> result: " + theResult);
+    }
 }
